@@ -46,5 +46,17 @@ namespace CarRental
         {
 
         }
+        private void btnQuit_Click(Object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e) 
+        {
+            txtCustomerName.Clear();
+            txtCarRentalPrice.Clear();
+            lstOut.Items.Clear();
+
+        }
     }
 }
