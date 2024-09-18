@@ -43,7 +43,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(128, 128, 255);
+            label1.ForeColor = Color.FromArgb(64, 64, 64);
             label1.Location = new Point(386, 20);
             label1.Name = "label1";
             label1.Size = new Size(131, 32);
@@ -69,7 +69,7 @@
             label3.Location = new Point(91, 122);
             label3.Name = "label3";
             label3.Size = new Size(113, 20);
-            label3.TabIndex = 2;
+            label3.TabIndex = 3;
             label3.Text = "Car Rental Price";
             label3.Click += label3_Click;
             // 
@@ -78,8 +78,10 @@
             txtCustomerName.Location = new Point(231, 72);
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(246, 23);
-            txtCustomerName.TabIndex = 3;
+            txtCustomerName.TabIndex = 2;
             txtCustomerName.TextChanged += txtCustomerName_TextChanged;
+            txtCustomerName.Enter += txtCustomerName_Enter;
+            txtCustomerName.Leave += txtCustomerName_Leave;
             // 
             // txtCarRentalPrice
             // 
@@ -97,6 +99,7 @@
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(713, 169);
             lstOut.TabIndex = 5;
+            lstOut.TabStop = false;
             lstOut.SelectedIndexChanged += lstOut_SelectedIndexChanged;
             // 
             // btnCalcPrice
@@ -117,6 +120,7 @@
             btnClear.TabIndex = 7;
             btnClear.Text = "&Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click_1;
             // 
             // btnQuit
             // 
@@ -126,6 +130,7 @@
             btnQuit.TabIndex = 8;
             btnQuit.Text = "&Quit";
             btnQuit.UseVisualStyleBackColor = true;
+            btnQuit.Click += btnQuit_Click_1;
             // 
             // Form1
             // 
@@ -142,7 +147,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Mukhammadjon Rajabov";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

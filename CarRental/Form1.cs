@@ -24,7 +24,14 @@ namespace CarRental
 
         private void btnCalcPrice_Click(object sender, EventArgs e)
         {
+            // Input
 
+            // Processing
+
+            // Output
+
+            // This change the focus to the clear buttom
+            btnClear.Focus();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -46,17 +53,28 @@ namespace CarRental
         {
 
         }
-        private void btnQuit_Click(Object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnClear_Click(object sender, EventArgs e) 
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             txtCustomerName.Clear();
             txtCarRentalPrice.Clear();
             lstOut.Items.Clear();
+            txtCustomerName.Focus();
+        }
 
+        private void btnQuit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtCustomerName_Enter(object sender, EventArgs e)
+        {
+            txtCustomerName.BackColor = Color.Bisque;
+        }
+
+        private void txtCustomerName_Leave(object sender, EventArgs e)
+        {
+            txtCustomerName.BackColor = SystemColors.Window;
         }
     }
 }
