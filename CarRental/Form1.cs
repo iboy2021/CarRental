@@ -24,11 +24,27 @@ namespace CarRental
 
         private void btnCalcPrice_Click(object sender, EventArgs e)
         {
+            double taxRate = .0875;
+            double price, totalPrice, taxAmount;
+            string CarRentCustomerName;
+
+
             // Input
+            price = double.Parse(txtCarRentalPrice.Text); 
+            CarRentCustomerName = txtCustomerName.Text;
+
 
             // Processing
+            taxAmount = price * taxRate; 
+            totalPrice = price + taxAmount;
 
             // Output
+            lstOut.Items.Add(" Customer Name is " + CarRentCustomerName);
+            lstOut.Items.Add(" Price is "+ price.ToString("C2"));
+            lstOut.Items.Add(" Tax rate is " + taxRate.ToString("P2"));
+            lstOut.Items.Add(" tax amount is " + taxAmount.ToString("C2"));
+            lstOut.Items.Add(" Total Price is " + totalPrice.ToString("C2"));
+
 
             // This change the focus to the clear buttom
             btnClear.Focus();
