@@ -24,25 +24,24 @@ namespace CarRental
 
         private void btnCalcPrice_Click(object sender, EventArgs e)
         {
-            double taxRate = .0875;
-            double price, totalPrice, taxAmount;
+            double dailyRate = 110;
+            double days, totalPrice, totalDR;
             string CarRentCustomerName;
 
 
             // Input
-            price = double.Parse(txtCarRentalPrice.Text); 
+            days = double.Parse(txtCarRentedDays.Text); 
             CarRentCustomerName = txtCustomerName.Text;
 
 
             // Processing
-            taxAmount = price * taxRate; 
-            totalPrice = price + taxAmount;
+            totalDR = days * dailyRate; 
+            totalPrice = days + totalDR;
 
             // Output
             lstOut.Items.Add(" Customer Name is " + CarRentCustomerName);
-            lstOut.Items.Add(" Price is "+ price.ToString("C2"));
-            lstOut.Items.Add(" Tax rate is " + taxRate.ToString("P2"));
-            lstOut.Items.Add(" tax amount is " + taxAmount.ToString("C2"));
+            lstOut.Items.Add(" Daily Rate is " + dailyRate.ToString("C2"));
+            lstOut.Items.Add(" Days Rented " + days);
             lstOut.Items.Add(" Total Price is " + totalPrice.ToString("C2"));
 
 
@@ -73,7 +72,7 @@ namespace CarRental
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             txtCustomerName.Clear();
-            txtCarRentalPrice.Clear();
+            txtCarRentedDays.Clear();
             lstOut.Items.Clear();
             txtCustomerName.Focus();
         }

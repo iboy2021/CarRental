@@ -32,7 +32,7 @@
             label2 = new Label();
             label3 = new Label();
             txtCustomerName = new TextBox();
-            txtCarRentalPrice = new TextBox();
+            txtCarRentedDays = new TextBox();
             lstOut = new ListBox();
             btnCalcPrice = new Button();
             btnClear = new Button();
@@ -68,9 +68,9 @@
             label3.Font = new Font("Segoe UI", 11.25F);
             label3.Location = new Point(91, 122);
             label3.Name = "label3";
-            label3.Size = new Size(113, 20);
+            label3.Size = new Size(118, 20);
             label3.TabIndex = 3;
-            label3.Text = "Car Rental Price";
+            label3.Text = "Car Rented Days";
             label3.Click += label3_Click;
             // 
             // txtCustomerName
@@ -83,13 +83,13 @@
             txtCustomerName.Enter += txtCustomerName_Enter;
             txtCustomerName.Leave += txtCustomerName_Leave;
             // 
-            // txtCarRentalPrice
+            // txtCarRentedDays
             // 
-            txtCarRentalPrice.Location = new Point(231, 122);
-            txtCarRentalPrice.Name = "txtCarRentalPrice";
-            txtCarRentalPrice.Size = new Size(246, 23);
-            txtCarRentalPrice.TabIndex = 4;
-            txtCarRentalPrice.TextChanged += txtCarRentalPrice_TextChanged;
+            txtCarRentedDays.Location = new Point(231, 122);
+            txtCarRentedDays.Name = "txtCarRentedDays";
+            txtCarRentedDays.Size = new Size(246, 23);
+            txtCarRentedDays.TabIndex = 4;
+            txtCarRentedDays.TextChanged += txtCarRentalPrice_TextChanged;
             // 
             // lstOut
             // 
@@ -141,7 +141,7 @@
             Controls.Add(btnClear);
             Controls.Add(btnCalcPrice);
             Controls.Add(lstOut);
-            Controls.Add(txtCarRentalPrice);
+            Controls.Add(txtCarRentedDays);
             Controls.Add(txtCustomerName);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -159,7 +159,7 @@
         private Label label2;
         private Label label3;
         private TextBox txtCustomerName;
-        private TextBox txtCarRentalPrice;
+        private TextBox txtCarRentedDays;
         private ListBox lstOut;
         private Button btnCalcPrice;
         private Button btnClear;
