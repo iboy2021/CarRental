@@ -7,67 +7,32 @@ namespace CarRental
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstOut_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCalcPrice_Click(object sender, EventArgs e)
         {
             double dailyRate = 110;
-            double days, totalPrice, totalDR;
+            double days, totalPr;
             string CarRentCustomerName;
 
 
             // Input
-            days = double.Parse(txtCarRentedDays.Text); 
+            days = double.Parse(txtCarRentedDays.Text);
             CarRentCustomerName = txtCustomerName.Text;
 
 
             // Processing
-            totalDR = days * dailyRate; 
-            totalPrice = days + totalDR;
+            totalPr = days * dailyRate;
 
             // Output
             lstOut.Items.Add(" Customer Name is " + CarRentCustomerName);
             lstOut.Items.Add(" Daily Rate is " + dailyRate.ToString("C2"));
-            lstOut.Items.Add(" Days Rented " + days);
-            lstOut.Items.Add(" Total Price is " + totalPrice.ToString("C2"));
+            lstOut.Items.Add(" Day(s) Rented " + days);
+            lstOut.Items.Add(" Total Price is " + totalPr.ToString("C2"));
 
 
             // This change the focus to the clear buttom
             btnClear.Focus();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCustomerName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCarRentalPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnClear_Click_1(object sender, EventArgs e)
         {
@@ -84,12 +49,13 @@ namespace CarRental
 
         private void txtCustomerName_Enter(object sender, EventArgs e)
         {
-            txtCustomerName.BackColor = Color.Bisque;
+            txtCustomerName.BackColor = Color.Azure;
         }
 
         private void txtCustomerName_Leave(object sender, EventArgs e)
         {
             txtCustomerName.BackColor = SystemColors.Window;
         }
+
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            labelCarRental = new Label();
+            labelCutomerName = new Label();
+            labelCarRentedDays = new Label();
             txtCustomerName = new TextBox();
             txtCarRentedDays = new TextBox();
             lstOut = new ListBox();
@@ -39,39 +39,39 @@
             btnQuit = new Button();
             SuspendLayout();
             // 
-            // label1
+            // labelCarRental
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(64, 64, 64);
-            label1.Location = new Point(386, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(131, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Car Rental";
-            label1.Click += label1_Click;
+            labelCarRental.AutoSize = true;
+            labelCarRental.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelCarRental.ForeColor = Color.FromArgb(64, 64, 64);
+            labelCarRental.Location = new Point(386, 20);
+            labelCarRental.Name = "labelCarRental";
+            labelCarRental.Size = new Size(131, 32);
+            labelCarRental.TabIndex = 0;
+            labelCarRental.Text = "Car Rental";
+            //labelCarRental.Click += labelCarRental_Click;
             // 
-            // label2
+            // labelCutomerName
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(91, 72);
-            label2.Name = "label2";
-            label2.Size = new Size(116, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Customer Name";
-            label2.Click += label2_Click;
+            labelCutomerName.AutoSize = true;
+            labelCutomerName.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelCutomerName.Location = new Point(91, 72);
+            labelCutomerName.Name = "labelCutomerName";
+            labelCutomerName.Size = new Size(116, 20);
+            labelCutomerName.TabIndex = 1;
+            labelCutomerName.Text = "Customer Name";
+            //labelCutomerName.Click += labelCutomerName_Click;
             // 
-            // label3
+            // labelCarRentedDays
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F);
-            label3.Location = new Point(91, 122);
-            label3.Name = "label3";
-            label3.Size = new Size(118, 20);
-            label3.TabIndex = 3;
-            label3.Text = "Car Rented Days";
-            label3.Click += label3_Click;
+            labelCarRentedDays.AutoSize = true;
+            labelCarRentedDays.Font = new Font("Segoe UI", 11.25F);
+            labelCarRentedDays.Location = new Point(91, 122);
+            labelCarRentedDays.Name = "labelCarRentedDays";
+            labelCarRentedDays.Size = new Size(128, 20);
+            labelCarRentedDays.TabIndex = 3;
+            labelCarRentedDays.Text = "Car Rented Day(s)";
+            //labelCarRentedDays.Click += labelCarRentedDays_Click;
             // 
             // txtCustomerName
             // 
@@ -79,7 +79,7 @@
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(246, 23);
             txtCustomerName.TabIndex = 2;
-            txtCustomerName.TextChanged += txtCustomerName_TextChanged;
+            //txtCustomerName.TextChanged += txtCustomerName_TextChanged;
             txtCustomerName.Enter += txtCustomerName_Enter;
             txtCustomerName.Leave += txtCustomerName_Leave;
             // 
@@ -89,7 +89,7 @@
             txtCarRentedDays.Name = "txtCarRentedDays";
             txtCarRentedDays.Size = new Size(246, 23);
             txtCarRentedDays.TabIndex = 4;
-            txtCarRentedDays.TextChanged += txtCarRentalPrice_TextChanged;
+            //txtCarRentedDays.TextChanged += txtCarRentedDays_TextChanged;
             // 
             // lstOut
             // 
@@ -100,7 +100,7 @@
             lstOut.Size = new Size(713, 169);
             lstOut.TabIndex = 5;
             lstOut.TabStop = false;
-            lstOut.SelectedIndexChanged += lstOut_SelectedIndexChanged;
+            //lstOut.SelectedIndexChanged += lstOut_SelectedIndexChanged;
             // 
             // btnCalcPrice
             // 
@@ -136,28 +136,27 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(901, 477);
+            ClientSize = new Size(901, 537);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
             Controls.Add(btnCalcPrice);
             Controls.Add(lstOut);
             Controls.Add(txtCarRentedDays);
             Controls.Add(txtCustomerName);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(labelCarRentedDays);
+            Controls.Add(labelCutomerName);
+            Controls.Add(labelCarRental);
             Name = "Form1";
             Text = "Mukhammadjon Rajabov";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label labelCarRental;
+        private Label labelCutomerName;
+        private Label labelCarRentedDays;
         private TextBox txtCustomerName;
         private TextBox txtCarRentedDays;
         private ListBox lstOut;
