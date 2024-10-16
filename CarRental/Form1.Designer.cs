@@ -38,9 +38,9 @@
             btnClear = new Button();
             btnQuit = new Button();
             groupBox1 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
+            rdSUV = new RadioButton();
+            rdMinivan = new RadioButton();
+            rdSedan = new RadioButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // 
             labelCutomerName.AutoSize = true;
             labelCutomerName.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelCutomerName.Location = new Point(91, 72);
+            labelCutomerName.Location = new Point(91, 158);
             labelCutomerName.Name = "labelCutomerName";
             labelCutomerName.Size = new Size(116, 20);
             labelCutomerName.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             labelCarRentedDays.AutoSize = true;
             labelCarRentedDays.Font = new Font("Segoe UI", 11.25F);
-            labelCarRentedDays.Location = new Point(91, 122);
+            labelCarRentedDays.Location = new Point(91, 208);
             labelCarRentedDays.Name = "labelCarRentedDays";
             labelCarRentedDays.Size = new Size(128, 20);
             labelCarRentedDays.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // txtCustomerName
             // 
-            txtCustomerName.Location = new Point(231, 72);
+            txtCustomerName.Location = new Point(231, 158);
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(246, 23);
             txtCustomerName.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             // txtCarRentedDays
             // 
-            txtCarRentedDays.Location = new Point(231, 122);
+            txtCarRentedDays.Location = new Point(231, 208);
             txtCarRentedDays.Name = "txtCarRentedDays";
             txtCarRentedDays.Size = new Size(246, 23);
             txtCarRentedDays.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             lstOut.FormattingEnabled = true;
             lstOut.ItemHeight = 15;
-            lstOut.Location = new Point(91, 172);
+            lstOut.Location = new Point(91, 250);
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(713, 169);
             lstOut.TabIndex = 5;
@@ -103,7 +103,7 @@
             // 
             // btnCalcPrice
             // 
-            btnCalcPrice.Location = new Point(100, 364);
+            btnCalcPrice.Location = new Point(107, 438);
             btnCalcPrice.Name = "btnCalcPrice";
             btnCalcPrice.Size = new Size(85, 73);
             btnCalcPrice.TabIndex = 6;
@@ -113,7 +113,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(386, 364);
+            btnClear.Location = new Point(403, 438);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 73);
             btnClear.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(691, 364);
+            btnQuit.Location = new Point(704, 438);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(79, 73);
             btnQuit.TabIndex = 8;
@@ -133,57 +133,55 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton3);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(rdSUV);
+            groupBox1.Controls.Add(rdMinivan);
+            groupBox1.Controls.Add(rdSedan);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(542, 60);
+            groupBox1.Location = new Point(91, 55);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(319, 85);
-            groupBox1.TabIndex = 9;
+            groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Car Type";
-            
             // 
-            // radioButton1
+            // rdSUV
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(15, 35);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(71, 25);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Sedan";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            rdSUV.AutoSize = true;
+            rdSUV.Location = new Point(232, 35);
+            rdSUV.Name = "rdSUV";
+            rdSUV.Size = new Size(58, 25);
+            rdSUV.TabIndex = 2;
+            rdSUV.Text = "SUV";
+            rdSUV.UseVisualStyleBackColor = true;
+            rdSUV.CheckedChanged += rdSUV_CheckedChanged;
             // 
-            // radioButton2
+            // rdMinivan
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(115, 35);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(84, 25);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Minivan";
-            radioButton2.UseVisualStyleBackColor = true;
+            rdMinivan.AutoSize = true;
+            rdMinivan.Location = new Point(115, 35);
+            rdMinivan.Name = "rdMinivan";
+            rdMinivan.Size = new Size(84, 25);
+            rdMinivan.TabIndex = 1;
+            rdMinivan.Text = "Minivan";
+            rdMinivan.UseVisualStyleBackColor = true;
+            rdMinivan.CheckedChanged += rdMinivan_CheckedChanged;
             // 
-            // radioButton3
+            // rdSedan
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(232, 35);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(58, 25);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "SUV";
-            radioButton3.UseVisualStyleBackColor = true;
+            rdSedan.AutoSize = true;
+            rdSedan.Location = new Point(15, 35);
+            rdSedan.Name = "rdSedan";
+            rdSedan.Size = new Size(71, 25);
+            rdSedan.TabIndex = 0;
+            rdSedan.Text = "Sedan";
+            rdSedan.UseVisualStyleBackColor = true;
+            rdSedan.CheckedChanged += rdSedan_CheckedChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(901, 509);
+            ClientSize = new Size(901, 558);
             Controls.Add(groupBox1);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
@@ -215,8 +213,8 @@
         private Button btnClear;
         private Button btnQuit;
         private GroupBox groupBox1;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rdSUV;
+        private RadioButton rdMinivan;
+        private RadioButton rdSedan;
     }
 }

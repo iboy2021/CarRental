@@ -2,6 +2,11 @@ namespace CarRental
 {
     public partial class Form1 : Form
     {
+        private string CarType;
+        const string SEDAN = "Sedan";
+        const string MINIVAN = "Minivan";
+        const string SUV = "SUV";
+
         public Form1()
         {
             InitializeComponent();
@@ -14,6 +19,7 @@ namespace CarRental
             double totalPr;
             string CarRentCustomerName;
             bool DaysValid;
+            double CarTypefee = 0;
 
 
 
@@ -24,12 +30,30 @@ namespace CarRental
             if (DaysValid)
             {
 
+                switch(CarType)
+                {
+                    case SEDAN:
+                        CarTypefee = 0; 
+                        break;
+                    case MINIVAN:
+                        CarTypefee = 20;
+                        break;
+                    case SUV:
+                        CarTypefee = 50;
+                        break;
+                    default:
+                        lstOut.Items.Add("This should never happen");
+                        break;
+                }
+
 
                 // Processing
-                totalPr = days * dailyRate;
+                totalPr = days * (dailyRate + CarTypefee);
 
                 // Output
                 lstOut.Items.Add(" Customer Name is " + CarRentCustomerName);
+                lstOut.Items.Add(" Car Type is " + CarType);
+                lstOut.Items.Add(" Car Type fee is " + CarTypefee.ToString("C2"));
                 lstOut.Items.Add(" Daily Rate is " + dailyRate.ToString("C2"));
                 lstOut.Items.Add(" Day(s) Rented " + days.ToString("N0"));
                 lstOut.Items.Add(" Total Price is " + totalPr.ToString("C2"));
@@ -53,7 +77,7 @@ namespace CarRental
             txtCustomerName.Clear();
             txtCarRentedDays.Clear();
             lstOut.Items.Clear();
-            txtCustomerName.Focus();
+            rdSedan.Focus();
         }
 
         private void btnQuit_Click_1(object sender, EventArgs e)
@@ -83,13 +107,32 @@ namespace CarRental
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            rdSedan.Checked = true;
+            rdSedan.Focus();
         }
 
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void rdSedan_CheckedChanged(object sender, EventArgs e)
         {
+            if (rdSedan.Checked)
+            {
+                CarType = SEDAN;
+            }
+        }
 
+        private void rdMinivan_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdMinivan.Checked)
+            {
+                CarType = MINIVAN;
+            }
+        }
+
+        private void rdSUV_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdSUV.Checked)
+            {
+                CarType = SUV;
+            }
         }
     }
 }
