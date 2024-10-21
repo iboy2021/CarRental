@@ -19,7 +19,7 @@ namespace CarRental
             double totalPr;
             string CarRentCustomerName;
             bool DaysValid;
-            double CarTypefee = 0;
+             // double CarTypefee = 0;
 
 
 
@@ -33,13 +33,13 @@ namespace CarRental
                 switch(CarType)
                 {
                     case SEDAN:
-                        CarTypefee = 0; 
+                        dailyRate = 110; 
                         break;
                     case MINIVAN:
-                        CarTypefee = 20;
+                        dailyRate = 130;
                         break;
                     case SUV:
-                        CarTypefee = 50;
+                        dailyRate = 160;
                         break;
                     default:
                         lstOut.Items.Add("This should never happen");
@@ -48,12 +48,11 @@ namespace CarRental
 
 
                 // Processing
-                totalPr = days * (dailyRate + CarTypefee);
+                totalPr = days * (dailyRate);
 
                 // Output
                 lstOut.Items.Add(" Customer Name is " + CarRentCustomerName);
                 lstOut.Items.Add(" Car Type is " + CarType);
-                lstOut.Items.Add(" Car Type fee is " + CarTypefee.ToString("C2"));
                 lstOut.Items.Add(" Daily Rate is " + dailyRate.ToString("C2"));
                 lstOut.Items.Add(" Day(s) Rented " + days.ToString("N0"));
                 lstOut.Items.Add(" Total Price is " + totalPr.ToString("C2"));
