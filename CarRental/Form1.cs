@@ -1,4 +1,5 @@
 namespace CarRental
+    //Mukhammadjon Rajabov
 {
     public partial class Form1 : Form
     {
@@ -7,6 +8,7 @@ namespace CarRental
         const string MINIVAN = "Minivan";
         const string SUV = "SUV";
 
+        private string CarRentTrancsactionLog = "CarRentTransLog.txt";
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +21,8 @@ namespace CarRental
             double totalPr;
             string CarRentCustomerName;
             bool DaysValid;
-             // double CarTypefee = 0;
+            // double CarTypefee = 0;
+            StreamWriter sw;
 
 
 
@@ -56,8 +59,15 @@ namespace CarRental
                 lstOut.Items.Add(" Daily Rate is " + dailyRate.ToString("C2"));
                 lstOut.Items.Add(" Day(s) Rented " + days.ToString("N0"));
                 lstOut.Items.Add(" Total Price is " + totalPr.ToString("C2"));
-
-
+                sw = File.AppendText(CarRentTrancsactionLog);
+                sw.WriteLine("************* Beginning of Transaction " +
+                    DateTime.Now.ToString("G") + "*************");
+                sw.WriteLine(" Customer Name is " + CarRentCustomerName);
+                sw.WriteLine(" Car Type is " + CarType);
+                sw.WriteLine(" Daily Rate is " + dailyRate.ToString("C2"));
+                sw.WriteLine(" Day(s) Rented " + days.ToString("N0"));
+                sw.WriteLine(" Total Price is " + totalPr.ToString("C2"));
+                sw.Close();
                 // This change the focus to the clear buttom
                 btnClear.Focus();
             }
@@ -69,7 +79,16 @@ namespace CarRental
                 }
             }
         }
+        /*
+        // THIS IS SAMPLE CODE DO NOT PUT THIS PERMANENTLY IN YOUR CODE
+        // TRY IT OUT AND THEN COMMENT IT OUT
 
+        lstOut.Items.Add(DateTime.Now.ToString("D"));
+        lstOut.Items.Add(DateTime.Now.ToString("d"));
+        lstOut.Items.Add(DateTime.Now.ToString("T"));
+        lstOut.Items.Add(DateTime.Now.ToString("t"));
+        lstOut.Items.Add(DateTime.Now.ToString("G"));
+        */
 
         private void btnClear_Click_1(object sender, EventArgs e)
         {
