@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace CarRental
     //Mukhammadjon Rajabov
 {
@@ -7,8 +9,13 @@ namespace CarRental
         const string SEDAN = "Sedan";
         const string MINIVAN = "Minivan";
         const string SUV = "SUV";
+        private double dailyRate;
+        private double SedDayRate;
+        private double MinDayRate;
+        private double SUVDayRate;
 
         private string CarRentTrancsactionLog = "CarRentTransLog.txt";
+        private string CarRentConfig = "CarRentConfig.txt";
         public Form1()
         {
             InitializeComponent();
@@ -16,9 +23,8 @@ namespace CarRental
 
         private void btnCalcPrice_Click(object sender, EventArgs e)
         {
-            double dailyRate = 110;
+            double totalPr; 
             int days;
-            double totalPr;
             string CarRentCustomerName;
             bool DaysValid;
             // double CarTypefee = 0;
@@ -33,16 +39,16 @@ namespace CarRental
             if (DaysValid)
             {
 
-                switch(CarType)
+                switch (CarType)
                 {
                     case SEDAN:
-                        dailyRate = 110; 
+                        dailyRate = SedDayRate; 
                         break;
                     case MINIVAN:
-                        dailyRate = 130;
+                        dailyRate = MinDayRate;
                         break;
                     case SUV:
-                        dailyRate = 160;
+                        dailyRate = SUVDayRate;
                         break;
                     default:
                         lstOut.Items.Add("This should never happen");
@@ -73,10 +79,7 @@ namespace CarRental
             }
             else
             {
-                if (!DaysValid)
-                {
-                    lstOut.Items.Add("Please enter whole number for day(s)");
-                }
+               lstOut.Items.Add("Please enter a positive whole number for day(s)");
             }
         }
         /*
@@ -127,6 +130,37 @@ namespace CarRental
         {
             rdSedan.Checked = true;
             rdSedan.Focus();
+            
+            StreamReader reader;
+            bool valValid;
+            do
+            {
+                try
+                {
+                    reader = File.OpenText(CarRentConfig);
+
+                    //Skipping validity checks so as not to confuse the input
+                    valValid = double.TryParse(reader.ReadLine(), out dailyRate);
+
+                    valValid = double.TryParse(reader.ReadLine(), out SedDayRate);
+                    valValid = double.TryParse(reader.ReadLine(), out MinDayRate);
+                    valValid = double.TryParse(reader.ReadLine(), out SUVDayRate);
+                    reader.Close();
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("The configuration file was not found. Please select a different file \n Error message was:" +
+                        ex.Message
+                        );
+                    openFileDialog1.InitialDirectory = Application.StartupPath;
+                    openFileDialog1.ShowDialog();
+                    CarRentConfig = openFileDialog1.FileName;
+
+
+                }
+            } while (fileBad);
+
+
         }
 
         private void rdSedan_CheckedChanged(object sender, EventArgs e)
