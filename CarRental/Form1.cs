@@ -133,15 +133,15 @@ namespace CarRental
             
             StreamReader reader;
             bool valValid;
+            bool fileBad = true;
             do
             {
                 try
                 {
                     reader = File.OpenText(CarRentConfig);
-
+                    fileBad = false;
                     //Skipping validity checks so as not to confuse the input
                     valValid = double.TryParse(reader.ReadLine(), out dailyRate);
-
                     valValid = double.TryParse(reader.ReadLine(), out SedDayRate);
                     valValid = double.TryParse(reader.ReadLine(), out MinDayRate);
                     valValid = double.TryParse(reader.ReadLine(), out SUVDayRate);

@@ -41,6 +41,7 @@
             rdSUV = new RadioButton();
             rdMinivan = new RadioButton();
             rdSedan = new RadioButton();
+            openFileDialog1 = new OpenFileDialog();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -177,6 +178,10 @@
             rdSedan.UseVisualStyleBackColor = true;
             rdSedan.CheckedChanged += rdSedan_CheckedChanged;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -216,5 +221,6 @@
         private RadioButton rdSUV;
         private RadioButton rdMinivan;
         private RadioButton rdSedan;
+        private OpenFileDialog openFileDialog1;
     }
 }
