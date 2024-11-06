@@ -154,7 +154,7 @@
             rdSUV.TabIndex = 2;
             rdSUV.Text = "SUV";
             rdSUV.UseVisualStyleBackColor = true;
-            rdSUV.CheckedChanged += rdSUV_CheckedChanged;
+            rdSUV.CheckedChanged += rdoSUV_CheckedChanged;
             // 
             // rdMinivan
             // 
@@ -165,7 +165,7 @@
             rdMinivan.TabIndex = 1;
             rdMinivan.Text = "Minivan";
             rdMinivan.UseVisualStyleBackColor = true;
-            rdMinivan.CheckedChanged += rdMinivan_CheckedChanged;
+            rdMinivan.CheckedChanged += rdoMinivan_CheckedChanged;
             // 
             // rdSedan
             // 
@@ -176,7 +176,7 @@
             rdSedan.TabIndex = 0;
             rdSedan.Text = "Sedan";
             rdSedan.UseVisualStyleBackColor = true;
-            rdSedan.CheckedChanged += rdSedan_CheckedChanged;
+            rdSedan.CheckedChanged += rdoSedan_CheckedChanged;
             // 
             // openFileDialog1
             // 

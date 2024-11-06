@@ -10,12 +10,38 @@ namespace CarRental
         const string MINIVAN = "Minivan";
         const string SUV = "SUV";
         private double dailyRate;
-        private double SedDayRate;
-        private double MinDayRate;
-        private double SUVDayRate;
+        private double sedDayRate;
+        private double minDayRate;
+        private double sUVDayRate;
+
 
         private string CarRentTrancsactionLog = "CarRentTransLog.txt";
         private string CarRentConfig = "CarRentConfig.txt";
+        public double DailyRate {  
+        
+            get { return dailyRate;  }
+            set { dailyRate = value; }
+        }
+
+        public double SedDayRate
+        {
+            get { return sedDayRate; }
+            set { sedDayRate = value; }
+        }
+
+        public double MinDayRate
+        {
+            get { return minDayRate; }
+            set { minDayRate = value; }
+        }
+
+        public double SUVDayRate
+        {
+            get { return sUVDayRate; }
+            set { sUVDayRate = value; }
+        }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -85,7 +111,7 @@ namespace CarRental
         /*
         // THIS IS SAMPLE CODE DO NOT PUT THIS PERMANENTLY IN YOUR CODE
         // TRY IT OUT AND THEN COMMENT IT OUT
-
+        //
         lstOut.Items.Add(DateTime.Now.ToString("D"));
         lstOut.Items.Add(DateTime.Now.ToString("d"));
         lstOut.Items.Add(DateTime.Now.ToString("T"));
@@ -140,11 +166,21 @@ namespace CarRental
                 {
                     reader = File.OpenText(CarRentConfig);
                     fileBad = false;
+                    double tempValue;
                     //Skipping validity checks so as not to confuse the input
-                    valValid = double.TryParse(reader.ReadLine(), out dailyRate);
-                    valValid = double.TryParse(reader.ReadLine(), out SedDayRate);
-                    valValid = double.TryParse(reader.ReadLine(), out MinDayRate);
-                    valValid = double.TryParse(reader.ReadLine(), out SUVDayRate);
+                    
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    dailyRate = tempValue; 
+                    
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    SedDayRate = tempValue; 
+                    
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    MinDayRate = tempValue;
+                    
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    SUVDayRate = tempValue;
+                    
                     reader.Close();
                 }
                 catch (FileNotFoundException ex)
@@ -163,7 +199,7 @@ namespace CarRental
 
         }
 
-        private void rdSedan_CheckedChanged(object sender, EventArgs e)
+        private void rdoSedan_CheckedChanged(object sender, EventArgs e)
         {
             if (rdSedan.Checked)
             {
@@ -171,7 +207,7 @@ namespace CarRental
             }
         }
 
-        private void rdMinivan_CheckedChanged(object sender, EventArgs e)
+        private void rdoMinivan_CheckedChanged(object sender, EventArgs e)
         {
             if (rdMinivan.Checked)
             {
@@ -179,7 +215,7 @@ namespace CarRental
             }
         }
 
-        private void rdSUV_CheckedChanged(object sender, EventArgs e)
+        private void rdoSUV_CheckedChanged(object sender, EventArgs e)
         {
             if (rdSUV.Checked)
             {
