@@ -9,6 +9,7 @@ namespace CarRental
         const string SEDAN = "Sedan";
         const string MINIVAN = "Minivan";
         const string SUV = "SUV";
+        
         private double dailyRate;
         private double sedDayRate;
         private double minDayRate;
@@ -17,6 +18,7 @@ namespace CarRental
 
         private string CarRentTrancsactionLog = "CarRentTransLog.txt";
         private string CarRentConfig = "CarRentConfig.txt";
+        
         public double DailyRate {  
         
             get { return dailyRate;  }
@@ -55,8 +57,6 @@ namespace CarRental
             bool DaysValid;
             // double CarTypefee = 0;
             StreamWriter sw;
-
-
 
             // Input
             // days = double.Parse(txtCarRentedDays.Text);

@@ -100,3 +100,39 @@
  Daily Rate is $200.00
  Day(s) Rented 1
  Total Price is $200.00
+************* Beginning of Transaction 11/11/2024 10:21:42 AM*************
+ Customer Name is Ali
+ Car Type is Minivan
+ Daily Rate is $150.00
+ Day(s) Rented 1
+ Total Price is $150.00
+************* Beginning of Transaction 11/11/2024 10:21:51 AM*************
+ Customer Name is ali
+ Car Type is Sedan
+ Daily Rate is $100.00
+ Day(s) Rented 1
+ Total Price is $100.00
+************* Beginning of Transaction 11/11/2024 10:22:03 AM*************
+ Customer Name is ali1
+ Car Type is SUV
+ Daily Rate is $200.00
+ Day(s) Rented 2
+ Total Price is $400.00
+************* Beginning of Transaction 11/11/2024 11:42:36 AM*************
+ Customer Name is ALI
+ Car Type is Sedan
+ Daily Rate is $100.00
+ Day(s) Rented 1
+ Total Price is $100.00
+************* Beginning of Transaction 11/11/2024 11:42:38 AM*************
+ Customer Name is ALI
+ Car Type is Minivan
+ Daily Rate is $150.00
+ Day(s) Rented 1
+ Total Price is $150.00
+************* Beginning of Transaction 11/11/2024 11:42:41 AM*************
+ Customer Name is ALI
+ Car Type is SUV
+ Daily Rate is $200.00
+ Day(s) Rented 1
+ Total Price is $200.00
