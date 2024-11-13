@@ -12,9 +12,21 @@ namespace CarRental
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        //This is the constructor
+        public Form2(Form1 form1)
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmSetReturn_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
         }
     }
 }

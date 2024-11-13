@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 
 namespace CarRental
-    //Mukhammadjon Rajabov
+    //Mukhammadjon Rajabov\\
 {
     public partial class Form1 : Form
     {
@@ -9,19 +9,22 @@ namespace CarRental
         const string SEDAN = "Sedan";
         const string MINIVAN = "Minivan";
         const string SUV = "SUV";
-        
+
         private double dailyRate;
         private double sedDayRate;
         private double minDayRate;
         private double sUVDayRate;
+        // declared the form2 object
+        private Form2 settingForm;
 
 
         private string CarRentTrancsactionLog = "CarRentTransLog.txt";
         private string CarRentConfig = "CarRentConfig.txt";
-        
-        public double DailyRate {  
-        
-            get { return dailyRate;  }
+
+        public double DailyRate
+        {
+
+            get { return dailyRate; }
             set { dailyRate = value; }
         }
 
@@ -51,7 +54,7 @@ namespace CarRental
 
         private void btnCalcPrice_Click(object sender, EventArgs e)
         {
-            double totalPr; 
+            double totalPr;
             int days;
             string CarRentCustomerName;
             bool DaysValid;
@@ -68,7 +71,7 @@ namespace CarRental
                 switch (CarType)
                 {
                     case SEDAN:
-                        dailyRate = SedDayRate; 
+                        dailyRate = SedDayRate;
                         break;
                     case MINIVAN:
                         dailyRate = MinDayRate;
@@ -105,7 +108,7 @@ namespace CarRental
             }
             else
             {
-               lstOut.Items.Add("Please enter a positive whole number for day(s)");
+                lstOut.Items.Add("Please enter a positive whole number for day(s)");
             }
         }
         /*
@@ -154,9 +157,11 @@ namespace CarRental
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //here we create object
+            settingForm = new Form2(this);
             rdSedan.Checked = true;
             rdSedan.Focus();
-            
+
             StreamReader reader;
             bool valValid;
             bool fileBad = true;
@@ -168,19 +173,19 @@ namespace CarRental
                     fileBad = false;
                     double tempValue;
                     //Skipping validity checks so as not to confuse the input
-                    
+
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
-                    dailyRate = tempValue; 
-                    
+                    dailyRate = tempValue;
+
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
-                    SedDayRate = tempValue; 
-                    
+                    SedDayRate = tempValue;
+
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
                     MinDayRate = tempValue;
-                    
+
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
                     SUVDayRate = tempValue;
-                    
+
                     reader.Close();
                 }
                 catch (FileNotFoundException ex)
@@ -221,6 +226,15 @@ namespace CarRental
             {
                 CarType = SUV;
             }
+        }
+
+        private void settingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settingForm.ShowDialog();
+            settingForm.txtTaxRate.Text = dailyRate.ToString();
+            settingForm.txtSedanFee.Text = SedDayRate.ToString();
+            settingForm.txtMinivanFee.Text = MinDayRate.ToString();
+            settingForm.txtSUVFee.Text = SUVDayRate.ToString();
         }
     }
 }

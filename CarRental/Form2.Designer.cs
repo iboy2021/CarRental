@@ -28,12 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form2";
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            btmSetReturn = new Button();
+            txtSUVFee = new TextBox();
+            txtMinivanFee = new TextBox();
+            txtSedanFee = new TextBox();
+            txtTaxRate = new TextBox();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.Location = new Point(127, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 33);
+            label1.TabIndex = 0;
+            label1.Text = "Configuration Settings";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 79);
+            label2.Name = "label2";
+            label2.Size = new Size(50, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Tax Rate";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(34, 133);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Sedan Fee";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(34, 190);
+            label4.Name = "label4";
+            label4.Size = new Size(71, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Minivan Fee";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(34, 250);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 15);
+            label5.TabIndex = 4;
+            label5.Text = "SUV Fee";
+            // 
+            // btmSetReturn
+            // 
+            btmSetReturn.Location = new Point(179, 311);
+            btmSetReturn.Name = "btmSetReturn";
+            btmSetReturn.Size = new Size(75, 23);
+            btmSetReturn.TabIndex = 5;
+            btmSetReturn.Text = "&Set & Return";
+            btmSetReturn.UseVisualStyleBackColor = true;
+            btmSetReturn.Click += btmSetReturn_Click;
+            // 
+            // txtSUVFee
+            // 
+            txtSUVFee.Location = new Point(127, 250);
+            txtSUVFee.Name = "txtSUVFee";
+            txtSUVFee.Size = new Size(100, 23);
+            txtSUVFee.TabIndex = 6;
+            // 
+            // txtMinivanFee
+            // 
+            txtMinivanFee.Location = new Point(127, 190);
+            txtMinivanFee.Name = "txtMinivanFee";
+            txtMinivanFee.Size = new Size(100, 23);
+            txtMinivanFee.TabIndex = 7;
+            // 
+            // txtSedanFee
+            // 
+            txtSedanFee.Location = new Point(127, 133);
+            txtSedanFee.Name = "txtSedanFee";
+            txtSedanFee.Size = new Size(100, 23);
+            txtSedanFee.TabIndex = 8;
+            // 
+            // txtTaxRate
+            // 
+            txtTaxRate.Location = new Point(127, 79);
+            txtTaxRate.Name = "txtTaxRate";
+            txtTaxRate.Size = new Size(100, 23);
+            txtTaxRate.TabIndex = 9;
+            // 
+            // Form2
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(452, 465);
+            Controls.Add(txtTaxRate);
+            Controls.Add(txtSedanFee);
+            Controls.Add(txtMinivanFee);
+            Controls.Add(txtSUVFee);
+            Controls.Add(btmSetReturn);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "Form2";
+            Text = "Car Rent Settings";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Button btmSetReturn;
+        public TextBox txtSUVFee;
+        public TextBox txtMinivanFee;
+        public TextBox txtSedanFee;
+        public TextBox txtTaxRate;
     }
 }
