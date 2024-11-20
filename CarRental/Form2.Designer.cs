@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -37,7 +36,6 @@
             txtSUVFee = new TextBox();
             txtMinivanFee = new TextBox();
             txtSedanFee = new TextBox();
-            txtTaxRate = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -50,19 +48,10 @@
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(34, 79);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Tax Rate";
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 133);
+            label3.Location = new Point(34, 88);
             label3.Name = "label3";
             label3.Size = new Size(60, 15);
             label3.TabIndex = 2;
@@ -71,7 +60,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(34, 190);
+            label4.Location = new Point(34, 156);
             label4.Name = "label4";
             label4.Size = new Size(71, 15);
             label4.TabIndex = 3;
@@ -80,7 +69,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(34, 250);
+            label5.Location = new Point(34, 235);
             label5.Name = "label5";
             label5.Size = new Size(49, 15);
             label5.TabIndex = 4;
@@ -88,7 +77,7 @@
             // 
             // btmSetReturn
             // 
-            btmSetReturn.Location = new Point(179, 311);
+            btmSetReturn.Location = new Point(180, 302);
             btmSetReturn.Name = "btmSetReturn";
             btmSetReturn.Size = new Size(75, 23);
             btmSetReturn.TabIndex = 5;
@@ -98,38 +87,30 @@
             // 
             // txtSUVFee
             // 
-            txtSUVFee.Location = new Point(127, 250);
+            txtSUVFee.Location = new Point(127, 227);
             txtSUVFee.Name = "txtSUVFee";
             txtSUVFee.Size = new Size(100, 23);
             txtSUVFee.TabIndex = 6;
             // 
             // txtMinivanFee
             // 
-            txtMinivanFee.Location = new Point(127, 190);
+            txtMinivanFee.Location = new Point(127, 153);
             txtMinivanFee.Name = "txtMinivanFee";
             txtMinivanFee.Size = new Size(100, 23);
             txtMinivanFee.TabIndex = 7;
             // 
             // txtSedanFee
             // 
-            txtSedanFee.Location = new Point(127, 133);
+            txtSedanFee.Location = new Point(127, 88);
             txtSedanFee.Name = "txtSedanFee";
             txtSedanFee.Size = new Size(100, 23);
             txtSedanFee.TabIndex = 8;
-            // 
-            // txtTaxRate
-            // 
-            txtTaxRate.Location = new Point(127, 79);
-            txtTaxRate.Name = "txtTaxRate";
-            txtTaxRate.Size = new Size(100, 23);
-            txtTaxRate.TabIndex = 9;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(452, 465);
-            Controls.Add(txtTaxRate);
+            ClientSize = new Size(423, 425);
             Controls.Add(txtSedanFee);
             Controls.Add(txtMinivanFee);
             Controls.Add(txtSUVFee);
@@ -137,7 +118,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form2";
             Text = "Car Rent Settings";
@@ -148,7 +128,6 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
@@ -156,6 +135,5 @@
         public TextBox txtSUVFee;
         public TextBox txtMinivanFee;
         public TextBox txtSedanFee;
-        public TextBox txtTaxRate;
     }
 }

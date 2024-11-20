@@ -44,6 +44,7 @@
             openFileDialog1 = new OpenFileDialog();
             menuStrip1 = new MenuStrip();
             mnuSettings = new ToolStripMenuItem();
+            btnDisplayLogs = new Button();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -107,7 +108,7 @@
             // 
             // btnCalcPrice
             // 
-            btnCalcPrice.Location = new Point(107, 438);
+            btnCalcPrice.Location = new Point(91, 438);
             btnCalcPrice.Name = "btnCalcPrice";
             btnCalcPrice.Size = new Size(85, 73);
             btnCalcPrice.TabIndex = 6;
@@ -117,7 +118,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(403, 438);
+            btnClear.Location = new Point(323, 438);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 73);
             btnClear.TabIndex = 7;
@@ -127,7 +128,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(704, 438);
+            btnQuit.Location = new Point(534, 438);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(79, 73);
             btnQuit.TabIndex = 8;
@@ -201,11 +202,22 @@
             mnuSettings.Text = "Settings";
             mnuSettings.Click += settingToolStripMenuItem_Click;
             // 
+            // btnDisplayLogs
+            // 
+            btnDisplayLogs.Location = new Point(725, 438);
+            btnDisplayLogs.Name = "btnDisplayLogs";
+            btnDisplayLogs.Size = new Size(79, 73);
+            btnDisplayLogs.TabIndex = 10;
+            btnDisplayLogs.Text = "&Display Logs For Selected Type";
+            btnDisplayLogs.UseVisualStyleBackColor = true;
+            btnDisplayLogs.Click += btnDisplayLogs_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(901, 558);
+            Controls.Add(btnDisplayLogs);
             Controls.Add(groupBox1);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
@@ -247,5 +259,6 @@
         private OpenFileDialog openFileDialog1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem mnuSettings;
+        private Button btnDisplayLogs;
     }
 }

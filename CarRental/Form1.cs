@@ -10,7 +10,6 @@ namespace CarRental
         const string MINIVAN = "Minivan";
         const string SUV = "SUV";
 
-        private double dailyRate;
         private double sedDayRate;
         private double minDayRate;
         private double sUVDayRate;
@@ -19,14 +18,7 @@ namespace CarRental
 
 
         private string CarRentTrancsactionLog = "CarRentTransLog.txt";
-        private string CarRentConfig = "CarRentConfig.txt";
-
-        public double DailyRate
-        {
-
-            get { return dailyRate; }
-            set { dailyRate = value; }
-        }
+        public string CarRentConfig = "CarRentConfig.txt";
 
         public double SedDayRate
         {
@@ -58,7 +50,7 @@ namespace CarRental
             int days;
             string CarRentCustomerName;
             bool DaysValid;
-            // double CarTypefee = 0;
+            double dailyRate = 0;
             StreamWriter sw;
 
             // Input
@@ -175,9 +167,6 @@ namespace CarRental
                     //Skipping validity checks so as not to confuse the input
 
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
-                    dailyRate = tempValue;
-
-                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
                     SedDayRate = tempValue;
 
                     valValid = double.TryParse(reader.ReadLine(), out tempValue);
@@ -230,11 +219,37 @@ namespace CarRental
 
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            setValuesOnSecondForm();
             settingForm.ShowDialog();
-            settingForm.txtTaxRate.Text = dailyRate.ToString();
+            
+        }
+
+        public void setValuesOnSecondForm()
+        {
             settingForm.txtSedanFee.Text = SedDayRate.ToString();
             settingForm.txtMinivanFee.Text = MinDayRate.ToString();
             settingForm.txtSUVFee.Text = SUVDayRate.ToString();
+        }
+
+        private void btnDisplayLogs_Click(object sender, EventArgs e)
+        {
+            const int MAX_LOG_SIZE = 2000;
+            string[] CarRentLog = new string[MAX_LOG_SIZE];
+            StreamReader sr = File.OpenText(CarRentTrancsactionLog);
+            while (!sr.EndOfStream)
+            {
+                int numLines = 0;
+                CarRentLog[numLines] = sr.ReadLine();
+                numLines++;
+            }
+            /*
+            int i = 0; j = 0; k = 0;
+            j = i++ + 2;
+            i = 0;
+            k = ++i + 2;
+            lstOut.Items.Add()
+            */
+            sr.Close();
         }
     }
 }
