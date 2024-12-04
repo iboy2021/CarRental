@@ -1,7 +1,7 @@
 using System.Windows.Forms;
 
 namespace CarRental
-    //Mukhammadjon Rajabov\\
+    //Mukhammadjon Rajabov ICA\\ 
 {
     public partial class Form1 : Form
     {
@@ -238,9 +238,9 @@ namespace CarRental
             StreamReader sr = File.OpenText(CarRentTrancsactionLog);
             while (!sr.EndOfStream)
             {
-                int numLines = 0;
-                CarRentLog[numLines] = sr.ReadLine();
-                numLines++;
+                int numLogLines = 0;
+                CarRentLog[numLogLines] = sr.ReadLine();
+                numLogLines++;
             }
             /*
             int i = 0; j = 0; k = 0;
@@ -250,6 +250,25 @@ namespace CarRental
             lstOut.Items.Add()
             */
             sr.Close();
+
+            int begTrans = -2;
+            int endTrans = 6;
+            for (int i = 0; i < numLogLines; i++)
+            {
+                if (CarRentLog[i] == "Car Type is " + CarType)
+                {
+                    // Some of you could use  CarRentLog[i].Contains(CarType)
+                    for (int j = i + begTrans; j <= i + endTrans; j++)
+                    {
+                        lstOut.Items.Add(CarRentLog[j]);
+                    }
+          
+                }
+
+            }
+
         }
+
     }
+
 }
