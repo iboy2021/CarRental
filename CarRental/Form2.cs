@@ -23,11 +23,6 @@ namespace CarRental
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btmSetReturn_Click(object sender, EventArgs e)
         {
             //read values from text boxes

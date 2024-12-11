@@ -5,7 +5,7 @@ namespace CarRental
 {
     public partial class Form1 : Form
     {
-        private string CarType;
+        private string carType;
         const string SEDAN = "Sedan";
         const string MINIVAN = "Minivan";
         const string SUV = "SUV";
@@ -60,7 +60,7 @@ namespace CarRental
             if (DaysValid)
             {
 
-                switch (CarType)
+                switch (carType)
                 {
                     case SEDAN:
                         dailyRate = SedDayRate;
@@ -82,7 +82,7 @@ namespace CarRental
 
                 // Output
                 lstOut.Items.Add(" Customer Name is " + CarRentCustomerName);
-                lstOut.Items.Add(" Car Type is " + CarType);
+                lstOut.Items.Add(" Car Type is " + carType);
                 lstOut.Items.Add(" Daily Rate is " + dailyRate.ToString("C2"));
                 lstOut.Items.Add(" Day(s) Rented " + days.ToString("N0"));
                 lstOut.Items.Add(" Total Price is " + totalPr.ToString("C2"));
@@ -90,7 +90,7 @@ namespace CarRental
                 sw.WriteLine("************* Beginning of Transaction " +
                     DateTime.Now.ToString("G") + "*************");
                 sw.WriteLine(" Customer Name is " + CarRentCustomerName);
-                sw.WriteLine(" Car Type is " + CarType);
+                sw.WriteLine(" Car Type is " + carType);
                 sw.WriteLine(" Daily Rate is " + dailyRate.ToString("C2"));
                 sw.WriteLine(" Day(s) Rented " + days.ToString("N0"));
                 sw.WriteLine(" Total Price is " + totalPr.ToString("C2"));
@@ -197,7 +197,7 @@ namespace CarRental
         {
             if (rdSedan.Checked)
             {
-                CarType = SEDAN;
+                carType = SEDAN;
             }
         }
 
@@ -205,7 +205,7 @@ namespace CarRental
         {
             if (rdMinivan.Checked)
             {
-                CarType = MINIVAN;
+                carType = MINIVAN;
             }
         }
 
@@ -213,7 +213,7 @@ namespace CarRental
         {
             if (rdSUV.Checked)
             {
-                CarType = SUV;
+                carType = SUV;
             }
         }
 
@@ -235,39 +235,33 @@ namespace CarRental
         {
             const int MAX_LOG_SIZE = 2000;
             string[] CarRentLog = new string[MAX_LOG_SIZE];
-            StreamReader sr = File.OpenText(CarRentTrancsactionLog);
+            int numLogLines = 0;
+            StreamReader sr;
+            sr = File.OpenText(CarRentTrancsactionLog);
             while (!sr.EndOfStream)
             {
-                int numLogLines = 0;
                 CarRentLog[numLogLines] = sr.ReadLine();
                 numLogLines++;
             }
-            /*
-            int i = 0; j = 0; k = 0;
-            j = i++ + 2;
-            i = 0;
-            k = ++i + 2;
-            lstOut.Items.Add()
-            */
             sr.Close();
-
             int begTrans = -2;
-            int endTrans = 6;
+            int endTrans = 3;
+
             for (int i = 0; i < numLogLines; i++)
             {
-                if (CarRentLog[i] == "Car Type is " + CarType)
+                if (CarRentLog[i].Contains("Car Type is " + carType))
                 {
-                    // Some of you could use  CarRentLog[i].Contains(CarType)
                     for (int j = i + begTrans; j <= i + endTrans; j++)
                     {
-                        lstOut.Items.Add(CarRentLog[j]);
+                        if (j >= 0 && j < numLogLines)
+                        {
+                            lstOut.Items.Add(CarRentLog[j]);
+                        }
                     }
-          
                 }
-
             }
-
         }
+
 
     }
 
